@@ -1,6 +1,6 @@
 # Index
 
-## Abstract
+## I. Introduction
 At first, I am inspired of many mining rig monitor software such as Minerstats, HiveOS, BrainOS. They do good jobs, They really help the community so much, the crypto industry
 really appriciate their contribution. In particular, I am a minerstats user, and I love their software! Really cool! This software is an opensource version of Minerstat which
 do monitor mining rigs.
@@ -54,7 +54,9 @@ When `sentry` get operational data from `miners`, they will report/forward data 
 
 In addition, the diagram above does not represent how we do deploy cause it does not have backup machine for `commander`.
 
-## Features
+
+
+## II. Features
 - Remote control mining rigs cpu/gpu including assign mining software (such as bzminer, lolminer, xmrig...), mining pool, mining address.
 - Allow multiple mining software running (cpu miner, gpu miner).
 - Monitor asic miner.
@@ -62,7 +64,9 @@ In addition, the diagram above does not represent how we do deploy cause it does
 - Scheduling mining software (cpu/gpu) to support mining with solar energy.
 - Scheduling  asic miner to support mining with solar energy.
 
-## How to setup a sentry for asic miners?
+## III. System Design and Architecture
+
+### 1. How to setup a sentry for asic miners?
 
 ```mermaid
 sequenceDiagram
@@ -81,7 +85,7 @@ sequenceDiagram
 
 ```
 
-## How to setup sentry for cpu/gpu miners?
+### 2. How to setup sentry for cpu/gpu miners?
 
 ```mermaid
 sequenceDiagram
@@ -97,13 +101,13 @@ sequenceDiagram
     Sentry-->>User: OK
 ```
 
-## Can asic sentry update mining pool/mining address?
+### Can asic sentry update mining pool/mining address?
 No, the asic API is **private**, asic sentry can collect log from `asic miner`and send it to the `commander` only.
 
-## How does user update mining software/pool/address on cpu/gpu miner?
+### 3. How does user update mining software/pool/address on cpu/gpu miner?
 Given that user did setup cpu/gpu sentry on machine!
 
-### User create mining pool address & mining address in Templates
+#### 3.1 User create mining pool address & mining address in Templates
 ```mermaid
 sequenceDiagram
     User ->> Commander: Go to template config
@@ -111,7 +115,7 @@ sequenceDiagram
     Commander -->> User: OK
 ```
 
-### User configure playbooks for miner.
+#### 3.2 User configure playbooks for miner.
 The term `playbooks` I borrow from ansible.
 ```mermaid
 sequenceDiagram
@@ -146,3 +150,5 @@ sequenceDiagram
         end
     end
 ```
+## IV. Implementation Details
+## V. Testing and Validation
