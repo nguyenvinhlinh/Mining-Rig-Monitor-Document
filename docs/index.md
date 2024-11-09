@@ -54,11 +54,10 @@ In addition, the diagram above does not represent how we do deploy cause it does
 
 ## Features
 - Remote control mining rigs cpu/gpu including assign mining software (such as bzminer, lolminer, xmrig...), mining pool, mining address.
-- Allow multiple mining software running (cpu miner, gpu miner)
-- Monitor asic miner
-
-
-
+- Allow multiple mining software running (cpu miner, gpu miner).
+- Monitor asic miner.
+- Scheduling mining software (cpu/gpu) to support mining with solar energy.
+- Scheduling  asic miner to support mining with solar energy.
 
 ## How to setup a sentry for asic miners?
 
