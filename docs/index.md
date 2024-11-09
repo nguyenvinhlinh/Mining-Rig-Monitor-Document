@@ -1,6 +1,15 @@
 # Index
 
 ## Abstract
+At first, I am inspired of many mining rig monitor software such as Minerstats, HiveOS, BrainOS. They do good jobs, They really help the community so much, the crypto industry
+really appriciate your contribution. I am a minerstats user, and I love their software! Really cool! This software is an opensource version which do monitor mining rigs.
+For a mining farm, they can selfhost this software and play with it!
+
+If someone could create such a great thing and opensource it (Bitcoin, Monero, Xmrig, Linux kernel, and many many thing ....), yes, this piece of software can be opensource too!
+
+I will try my best to deliver it, and I really hope so! Or it's just another time, I would fail! but it's worth a try!
+
+---
 There are two three tiers regarding monitoring mining rigs.
 
 - commander
@@ -42,6 +51,13 @@ One `cpu / gpu sentry` can monitor one `cpu/gpu miner`. **Beware that a machine 
 When `sentry` get operational data from `miners`, they will report/forward data to the `commander`.
 
 In addition, the diagram above does not represent how we do deploy cause it does not have backup machine for `commander`.
+
+## Features
+- Remote control mining rigs cpu/gpu including assign mining software (such as bzminer, lolminer, xmrig...), mining pool, mining address.
+- Allow multiple mining software running (cpu miner, gpu miner)
+- Monitor asic miner
+
+
 
 
 ## How to setup a sentry for asic miners?
@@ -107,7 +123,7 @@ sequenceDiagram
 
     loop every minute
         Sentry ->> Commander: regularly check for new playbook
-        alt is new playerbook avaiable
+        alt is new playbook avaiable
             Commander -->> Sentry: Yes, there is new playbook
             Sentry ->> Commander: Get the latest playbooks
             Commander -->> Sentry: new playbooks
