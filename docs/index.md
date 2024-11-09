@@ -2,7 +2,9 @@
 
 ## Abstract
 At first, I am inspired of many mining rig monitor software such as Minerstats, HiveOS, BrainOS. They do good jobs, They really help the community so much, the crypto industry
-really appriciate your contribution. I am a minerstats user, and I love their software! Really cool! This software is an opensource version which do monitor mining rigs.
+really appriciate their contribution. In particular, I am a minerstats user, and I love their software! Really cool! This software is an opensource version of Minerstat which
+do monitor mining rigs.
+
 For a mining farm, they can selfhost this software and play with it!
 
 If someone could create such a great thing and opensource it (Bitcoin, Monero, Xmrig, Linux kernel, and many many thing ....), yes, this piece of software can be opensource too!
