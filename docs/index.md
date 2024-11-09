@@ -113,13 +113,13 @@ sequenceDiagram
             Commander -->> Sentry: new playbooks
             Sentry ->> Miner: stop all playbooks
             Miner -->> Sentry: OK
-            Sentry ->> Sentry: remove old playbooks
+            Sentry ->> Miner: remove all playbooks
             Miner -->> Sentry: OK
-            loop for each new playbooks
+            loop for each new playbook
                 Sentry ->> Miner: install mining software if not available
                 Sentry ->> Miner: Write bat/shell script to execute
             end
-            loop for each playbooks
+            loop for each playbook
                 Sentry ->> Miner: execute playbook
                 Miner -->> Sentry: OK
             end
@@ -127,5 +127,4 @@ sequenceDiagram
             Commander -->> Sentry: No
         end
     end
-
 ```
