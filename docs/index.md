@@ -33,3 +33,33 @@ flowchart TB
 
 
 ```
+
+Regarding sentry, **sentry source code** for `asic miners` should be diffirent from **sentry** for `cpu/gpu miners`.
+
+One `asic sentry` can monitor many `asic miners`.
+
+One `cpu / gpu sentry` can monitor one `cpu/gpu miner`. **Beware that a machine can mine with CPU and GPU at the sametime.**
+
+When `sentry` get operational data from `miners`, they will report/forward data to the `commander`.
+
+In addition, the diagram above does not represent how we do deploy cause it does not have backup machine for `commander`.
+
+
+## How to setup a sentry for asic miners?
+
+```mermaid
+sequenceDiagram
+    User ->> Commander: Create a new sentry on commander dashboard
+    Commander -->> User: Commander URL & Sentry Token
+
+    User ->> Sentry: Input Commander URL & Sentry Token
+    Sentry->>Commander: Check Commander URL & Sentry Token
+    Commander-->>Sentry: OK
+    Sentry-->>User: OK
+
+    User->>Sentry: ASIC TYPE & ASIC IP
+    Sentry->>ASIC: Check ASIC
+    ASIC-->>Sentry: OK
+    Sentry-->User: OK
+
+```
