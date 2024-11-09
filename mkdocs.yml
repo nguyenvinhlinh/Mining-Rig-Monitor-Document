@@ -1,1 +1,8 @@
 site_name: Mining Rig Monitor
+repo_url: https://github.com/nguyenvinhlinh/Mining-Rig-Monitor-Document
+repo_name: Github
+nav:
+  - 'index.md'
+  - 'crawling-data.md'
+plugins:
+    - mermaid2

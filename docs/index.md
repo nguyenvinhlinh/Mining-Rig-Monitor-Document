@@ -1,17 +1,35 @@
-# Welcome to MkDocs
+# Index
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Abstract
+There are two three tiers regarding monitoring mining rigs.
 
-## Commands
+- commander
+- sentry
+- mining rig:
+    - gpu miner
+    - cpu miner
+    - asic miner
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+The source code is focusing on the `commander` and `sentry`.  There is one `commander` for mining farm, and many `sentry`. A sentry is installed on each `gpu miner`/ `cpu miner`. On the other hand, one sentry can monitor many `asic miner`.
 
-## Project layout
+```mermaid
+flowchart TB
+    Commander[Commander]
+    Commander --> AsicSentry[ASIC Sentry]
+    AsicSentry --> AM1[ASIC Miner 1]
+    AsicSentry --> AM2[ASIC Miner 2]
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+    Commander --> CPUGPUSentry1[CPU/GPU Sentry 1]
+    CPUGPUSentry1 -->|installed on| CPUMiner1[CPU Miner 1]
+
+    Commander --> CPUGPUSentry2[CPU/GPU Sentry 2]
+    CPUGPUSentry2 -->|installed on| CPUMiner2[CPU Miner 2]
+
+    Commander --> CPUGPUSentry3[CPU/GPU Sentry 3]
+    CPUGPUSentry3 -->|installed on| GPUMiner1[GPU Miner 1]
+
+    Commander --> CPUGPUSentry4[CPU/GPU Sentry 4]
+    CPUGPUSentry4 -->|installed on| GPUMiner2[GPU Miner 2]
+
+
+```
