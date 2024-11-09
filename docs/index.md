@@ -31,7 +31,6 @@ flowchart TB
     Commander --> CPUGPUSentry4[CPU/GPU Sentry 4]
     CPUGPUSentry4 -->|installed on| GPUMiner2[GPU Miner 2]
 
-
 ```
 
 Regarding sentry, **sentry source code** for `asic miners` should be diffirent from **sentry** for `cpu/gpu miners`.
@@ -49,7 +48,7 @@ In addition, the diagram above does not represent how we do deploy cause it does
 
 ```mermaid
 sequenceDiagram
-    User ->> Commander: Create a new sentry on commander dashboard
+    User ->> Commander: Create a new sentry type `asic` on commander dashboard
     Commander -->> User: Commander URL & Sentry Token
 
     User ->> Sentry: Input Commander URL & Sentry Token
@@ -61,5 +60,72 @@ sequenceDiagram
     Sentry->>ASIC: Check ASIC
     ASIC-->>Sentry: OK
     Sentry-->User: OK
+
+```
+
+## How to setup sentry for cpu/gpu miners?
+
+```mermaid
+sequenceDiagram
+    User ->> Commander: Create a new sentry type `cpu/gpu` on commander dashboard
+    Commander -->> User: Commander URL & Sentry Token
+
+    User ->> Miner: Install sentry software on miner
+    User ->> Miner: Open Sentry software
+
+    User ->> Sentry: Input Commander URL & Sentry Token
+    Sentry->>Commander: Check Commander URL & Sentry Token
+    Commander-->>Sentry: OK
+    Sentry-->>User: OK
+```
+
+## Can asic sentry update mining pool/mining address?
+No, the asic API is **private**, asic sentry can collect log from `asic miner`and send it to the `commander` only.
+
+## How does user update mining software/pool/address on cpu/gpu miner?
+Given that user did setup cpu/gpu sentry on machine!
+
+### User create mining pool address & mining address in Templates
+```mermaid
+sequenceDiagram
+    User ->> Commander: Go to template config
+    User ->> Commander: Create a new pool adress & mining address
+    Commander -->> User: OK
+```
+
+### User configure playbooks for miner.
+The term `playbooks` I borrow from ansible.
+```mermaid
+sequenceDiagram
+    User ->>Commander: Go to cpu/gpu miner section
+    User ->>Commander: Create a new playbooks
+    Commander -->> User: return mining software list
+    User ->>Commander: User choose mining software
+    Commander -->> User: return script template with placeholder for pool address, mining address.
+    User ->> Commander: modify script, choose pool address, mining address variable and Submit
+    Commander -->> User: OK
+
+    loop every minute
+        Sentry ->> Commander: regularly check for new playbook
+        alt is new playerbook avaiable
+            Commander -->> Sentry: Yes, there is new playbook
+            Sentry ->> Commander: Get the latest playbooks
+            Commander -->> Sentry: new playbooks
+            Sentry ->> Miner: stop all playbooks
+            Miner -->> Sentry: OK
+            Sentry ->> Sentry: remove old playbooks
+            Miner -->> Sentry: OK
+            loop for each new playbooks
+                Sentry ->> Miner: install mining software if not available
+                Sentry ->> Miner: Write bat/shell script to execute
+            end
+            loop for each playbooks
+                Sentry ->> Miner: execute playbook
+                Miner -->> Sentry: OK
+            end
+        else is no new playerbook
+            Commander -->> Sentry: No
+        end
+    end
 
 ```
