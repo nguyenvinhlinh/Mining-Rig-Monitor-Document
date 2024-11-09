@@ -58,6 +58,7 @@ In addition, the diagram above does not represent how we do deploy cause it does
 - Remote control mining rigs cpu/gpu including assign mining software (such as bzminer, lolminer, xmrig...), mining pool, mining address.
 - Allow multiple mining software running (cpu miner, gpu miner).
 - Monitor asic miner.
+- Integration with solar inverter. (Questionable)
 - Scheduling mining software (cpu/gpu) to support mining with solar energy.
 - Scheduling  asic miner to support mining with solar energy.
 
