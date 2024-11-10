@@ -59,6 +59,7 @@ In addition, the diagram above does not represent how we do deploy cause it does
 ## II. Features
 - Remote control mining rigs cpu/gpu including assign mining software (such as bzminer, lolminer, xmrig...), mining pool, mining address.
 - Allow multiple mining software running (cpu miner, gpu miner).
+- Monitor cpu/gpu miner.
 - Monitor asic miner.
 - Integration with solar inverter. (Questionable)
 - Scheduling mining software (cpu/gpu) to support mining with solar energy.
@@ -67,11 +68,12 @@ In addition, the diagram above does not represent how we do deploy cause it does
 ## III. System Design and Architecture
 
 ### 1. How to setup a sentry for asic miners?
-
+User need to install `ASIC Sentry` on a computer first! In addition, make sure that this computer can ping other `asic miners`
 ```mermaid
 sequenceDiagram
     User ->> Commander: Create a new sentry type `asic` on commander dashboard
     Commander -->> User: Commander URL & Sentry Token
+
 
     User ->> Sentry: Input Commander URL & Sentry Token
     Sentry->>Commander: Check Commander URL & Sentry Token
@@ -150,5 +152,7 @@ sequenceDiagram
         end
     end
 ```
+
+
 ## IV. Implementation Details
 ## V. Testing and Validation
