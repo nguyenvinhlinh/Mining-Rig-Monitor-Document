@@ -91,6 +91,8 @@ an intermediate storage before storing in relational database. There are two dif
 - Receive logging data and insert into message queue
 - Ingest data from message queue and update/insert into relational database.
 
+Regarding communication between `commander` and `sentry`. it's important to secure network via HTTPS. Miners' logging data is sensitive.
+
 
 ```mermaid
 ---
@@ -220,5 +222,40 @@ sequenceDiagram
 
 
 ## IV. Implementation Details
+### 1. Entity Relationship Diagram
+```mermaid
+erDiagram
+    ASIC-Mining-Rig ||--o{ ASIC-Mining-Log : "has many"
+    CPU-GPU-Mining-Rig ||--o{ CPU-GPU-Mining-Log : "has many"
+    CPU-GPU-Mining-Rig ||--o{ Playbook : "has many"
+    Playbook ||--o{ Address: "has many"
+
+    Address {
+        string type "ex: pool/crypto"
+        string address
+    }
+
+    Playbook {
+        string miner_software
+        string template
+    }
+
+    Mining-Software {
+        string name
+        string version
+        string download_url
+        string executable_template
+    }
+
+    ASIC-Mining-Rig {
+        string firmware_version
+        string software_version
+        string model
+        string model_variant
+    }
+```
+
+### 2. Database diagram
+
 
 ## V. Testing and Validation
