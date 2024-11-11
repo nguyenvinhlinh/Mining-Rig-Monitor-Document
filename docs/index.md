@@ -61,9 +61,64 @@ In addition, the diagram above does not represent how we do deploy cause it does
 - Allow multiple mining software running (cpu miner, gpu miner).
 - Monitor cpu/gpu miner.
 - Monitor asic miner.
-- Integration with solar inverter. (Questionable)
-- Scheduling mining software (cpu/gpu) to support mining with solar energy.
-- Scheduling  asic miner to support mining with solar energy.
+
+```mermaid
+flowchart LR
+    User
+    cpu-gpu-mining-rig[CPU/GPU Mining Rig]
+    asic-mining-rig[ASIC Mining Rig]
+    cpu-gpu-playbook[CPU/GPU Playbook]
+    cpu-gpu-log[CPU/GPU Log]
+    asic-log[ASIC Log]
+
+    User --> f1[1. Login]
+
+    User --> f2[2. Add new cpu/gpu mining rig]
+    f2 --> cpu-gpu-mining-rig
+
+    User --> f3[3. Remove cpu/gpu mining rig]
+    f3 --> cpu-gpu-mining-rig
+
+    User --> f4[4. Add new ASIC mining rig]
+    f4 --> asic-mining-rig
+
+    User --> f5[5. Remove ASIC mining rig]
+    f5 --> asic-mining-rig
+
+    User --> f6[6. View overall cpu/gpu mining rig with index page]
+    f6 --> cpu-gpu-mining-rig
+
+    User --> f7[7. View overall ASIC mining rig with index page]
+    f7 --> asic-mining-rig
+
+    User --> f8[8. View cpu/gpu mining rig detail]
+    f8 --> cpu-gpu-mining-rig
+
+    User --> f9[9. View ASIC mining rig detail]
+    f9 --> asic-mining-rig
+
+
+    cpu-gpu-mining-rig --> f10[10. Add new playbook]
+    f10 --> cpu-gpu-playbook
+
+    cpu-gpu-mining-rig --> f11[11. View  playbook]
+    f11 --> cpu-gpu-playbook
+
+    cpu-gpu-mining-rig --> f12[12. View  all playbooks]
+    f12 --> cpu-gpu-playbook
+
+    cpu-gpu-mining-rig --> f13[13. Edit playbook]
+    f13 --> cpu-gpu-playbook
+
+    cpu-gpu-mining-rig --> f14[14. Remove playbook]
+    f14 --> cpu-gpu-playbook
+
+    cpu-gpu-mining-rig --> f15[15. View log]
+    f15 --> cpu-gpu-log
+
+    asic-mining-rig --> f16[16. View log]
+    f16 --> asic-log
+```
 
 ## III. System Design and Architecture
 ### 1. Data payload processing
@@ -139,6 +194,8 @@ User need to install `ASIC Sentry` on a computer first! In addition, make sure t
 ```mermaid
 sequenceDiagram
     User ->> Commander: Create a new sentry type `asic` on commander dashboard
+    Commander ->> Database: Save new asic mining rig
+    Database -->> Commander: OK
     Commander -->> User: Commander URL & Sentry Token
 
 
@@ -228,7 +285,20 @@ erDiagram
     ASIC-Mining-Rig ||--o{ ASIC-Mining-Log : "has many"
     CPU-GPU-Mining-Rig ||--o{ CPU-GPU-Mining-Log : "has many"
     CPU-GPU-Mining-Rig ||--o{ Playbook : "has many"
-    Playbook ||--o{ Address: "has many"
+    Playbook
+    Address
+    Mining-Software
+
+```
+
+### 2. Database diagram
+
+```mermaid
+erDiagram
+    ASIC-Mining-Rig ||--o{ ASIC-Mining-Log : "has many"
+    CPU-GPU-Mining-Rig ||--o{ CPU-GPU-Mining-Log : "has many"
+    CPU-GPU-Mining-Rig ||--o{ Playbook : "has many"
+
 
     Address {
         string type "ex: pool/crypto"
@@ -253,9 +323,8 @@ erDiagram
         string model
         string model_variant
     }
-```
 
-### 2. Database diagram
+```
 
 
 ## V. Testing and Validation
