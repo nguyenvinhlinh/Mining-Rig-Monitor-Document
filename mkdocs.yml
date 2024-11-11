@@ -6,8 +6,13 @@ nav:
   - 'crawling-data.md'
 plugins:
     - mermaid2
+    - panzoom:
+        full_screen: True
 
 theme:
   name: material
   features:
     - navigation.expand
+
+markdown_extensions:
+  - admonition

@@ -76,48 +76,51 @@ flowchart LR
     User --> f2[2. Add new cpu/gpu mining rig]
     f2 --> cpu-gpu-mining-rig
 
-    User --> f3[3. Remove cpu/gpu mining rig]
+    User --> f3[3. Edit cpu/gpu mining rig]
     f3 --> cpu-gpu-mining-rig
 
-    User --> f4[4. Add new ASIC mining rig]
-    f4 --> asic-mining-rig
+    User --> f4[4. Remove cpu/gpu mining rig]
+    f4 --> cpu-gpu-mining-rig
 
-    User --> f5[5. Remove ASIC mining rig]
+    User --> f5[5. Add new ASIC mining rig]
     f5 --> asic-mining-rig
 
-    User --> f6[6. View overall cpu/gpu mining rig with index page]
-    f6 --> cpu-gpu-mining-rig
+    User --> f6[6. Remove ASIC mining rig]
+    f6 --> asic-mining-rig
 
-    User --> f7[7. View overall ASIC mining rig with index page]
-    f7 --> asic-mining-rig
+    User --> f7[7. View overall cpu/gpu mining rig with index page]
+    f7 --> cpu-gpu-mining-rig
 
-    User --> f8[8. View cpu/gpu mining rig detail]
-    f8 --> cpu-gpu-mining-rig
+    User --> f8[8. View overall ASIC mining rig with index page]
+    f8 --> asic-mining-rig
 
-    User --> f9[9. View ASIC mining rig detail]
-    f9 --> asic-mining-rig
+    User --> f9[9. View cpu/gpu mining rig detail]
+    f9 --> cpu-gpu-mining-rig
+
+    User --> f10[10. View ASIC mining rig detail]
+    f10 --> asic-mining-rig
 
 
-    cpu-gpu-mining-rig --> f10[10. Add new playbook]
-    f10 --> cpu-gpu-playbook
-
-    cpu-gpu-mining-rig --> f11[11. View  playbook]
+    cpu-gpu-mining-rig --> f11[11. Add new playbook]
     f11 --> cpu-gpu-playbook
 
-    cpu-gpu-mining-rig --> f12[12. View  all playbooks]
+    cpu-gpu-mining-rig --> f12[12. View  playbook]
     f12 --> cpu-gpu-playbook
 
-    cpu-gpu-mining-rig --> f13[13. Edit playbook]
+    cpu-gpu-mining-rig --> f13[13. View  all playbooks]
     f13 --> cpu-gpu-playbook
 
-    cpu-gpu-mining-rig --> f14[14. Remove playbook]
+    cpu-gpu-mining-rig --> f14[14. Edit playbook]
     f14 --> cpu-gpu-playbook
 
-    cpu-gpu-mining-rig --> f15[15. View log]
-    f15 --> cpu-gpu-log
+    cpu-gpu-mining-rig --> f15[15. Remove playbook]
+    f15 --> cpu-gpu-playbook
 
-    asic-mining-rig --> f16[16. View log]
-    f16 --> asic-log
+    cpu-gpu-mining-rig --> f16[16. View log]
+    f16 --> cpu-gpu-log
+
+    asic-mining-rig --> f17[17. View log]
+    f17 --> asic-log
 ```
 
 ## III. System Design and Architecture
@@ -327,7 +330,78 @@ erDiagram
 ```
 
 ### 3. Feature 1: Login
-The software does not have user credentials system. At the time sysadmin deploy the `commander`, there is a configuration for **password**.
+The software is selfhost and  does not have user credentials system. At the time sysadmin deploy the `commander`, there is a configuration for **password**.
+
+
+
+!!! note "There is no **limit** number of active login session."
+
+```mermaid
+sequenceDiagram
+    User ->> Web Browser: open
+    User ->> Commander: visit commander url
+    alt is login before
+        Commander -->> Web Browser: redirect to the main dashboard
+    else is not log in
+        Commander -->> Web Browser: return to login page
+        User ->> Web Browser: Enter password & click submit
+        Web Browser ->> Commander: submit password
+
+        loop till login success
+            alt is password correct
+                Commander -->> Web Browser: redirect to the main dashboard
+            else is not correct
+                Commander -->> Web Browser: return to login page
+                User ->> Web Browser: Enter password & submit
+                Web Browser ->> Commander: submit password
+            end
+        end
+    end
+```
+
+### 4. Feature 2: Add new cpu/gpu mining rig
+Login user are capable create a new cpu/gpu mining rig to monitor, There are two required attributes that users need to provide:
+
+- `mining rig name`: should be distinct
+- `mining rig type` (cpu/gpu or asic)
+
+On the other hand, server will return `token`. This token will be used when setup sentry after installing `sentry` on the `cpu/gpu mining rig`.
+
+In addition, given that there are many active login session, here are usecase:
+
+- A new asic mining rig created, people who are viewing `asic mining rig index page`, they will see a new entry on their
+`asic mining rig index page` without refresh the page.
+- For those who are not viewing `asic mining rig index`, they will not see different nor receive that data payload from
+commander about the `new asic mining rig` created
+
+
+```mermaid
+sequenceDiagram
+    Login-User-1 ->> Commander: viewing asic mining rig index (a socket connection)
+    Login-User-1 ->> Commander: subscribe to pubsub channel asic-mining-rig-id
+    Login-User-2 ->> Commander: viewing other page (a socket connection)
+
+    Login-User-3 ->> Commander: request create new mining rig page
+    Commander -->> Login-User-3: OK
+    Login-User-3 ->> Commander: Submit mining rig name & type
+    Commander ->> Database: Add new asic mining rig record
+    Database -->> Commander: OK
+    Commander -->> Login-User-3: OK
+
+    Commander -->> Commander: boardcast message to pubsub channel asic-mining-rig-index
+    Commander ->> Login-User-1: send a message that new asic mining rig created
+    Commander ->> Login-User-3: send a message that new asic mining rig created
+```
+
+!!! Note "Login-User-2 does not receive message that new asic mining rig created."
+
+The broadcast channel named: `asic-mining-rig-index`
+
+Data payload schema: `{:asic_mining_rig_index, :created, mining_rig}`
+
+### 5. Feature 3: Edit CPU/GPU mining rig
+This feature allows user edit `mining rig name` only. Similar UI realtime update logic as creating new `cpu/gpu mining rig`. Other active login users get
+update if they are viewing `asic-mining-rig-index`.
 
 
 
