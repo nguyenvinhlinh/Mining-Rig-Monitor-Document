@@ -326,5 +326,9 @@ erDiagram
 
 ```
 
+### 3. Feature 1: Login
+The software does not have user credentials system. At the time sysadmin deploy the `commander`, there is a configuration for **password**.
+
+
 
 ## V. Testing and Validation

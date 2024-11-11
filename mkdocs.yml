@@ -6,3 +6,8 @@ nav:
   - 'crawling-data.md'
 plugins:
     - mermaid2
+
+theme:
+  name: material
+  features:
+    - navigation.expand
