@@ -47,7 +47,18 @@ erDiagram
 
 ```
 
-## 13. Pubsub channel summary
+## 3. Pubsub channel summary
+This software support rich UI/UI realtime update & interaction shared between all active login session. As a consequence, this is a list of pubsub channel.
+
+- `cpu-gpu-mining-rig-index`
+- `cpu-gpu-mining-rig-index-operation-stats`
+- `cpu-gpu-mining-rig:id`
+- `cpu-gpu-mining-rig-operation-stats:id`
+
+- `asic-mining-rig-index`
+- `asic-mining-rig-index-operation-stats`
+- `asic-mining-rig-id:id`
+- `asic-mining-rig-operation-stats-id:id`
 
 ```mermaid
 flowchart LR
@@ -79,7 +90,6 @@ flowchart LR
     asic-mining-rig-id --> asic-show-page
     asic-mining-rig-operation-stats-id --> asic-show-page
 ```
-
 
 ## 3. Feature 1: Login
 The software is selfhost and  does not have user credentials system. At the time sysadmin deploy the `commander`, there is a configuration for **password**.
@@ -411,4 +421,8 @@ There are two pubsub channel using here:
 - `asic-mining-rig:id`: for mining rig data update, such as name
 - `asic-mining-rig-operation-stats:id`: for mininig operational stats
 
-## 12. Feature 11-> 15 (To be delivered)
+## 12. Feature 11: Add new playbook (TBD)
+## 13. Feature 12: View playbook (TBD)
+## 14. Feature 13: View all playbook (TBD)
+## 15. Feature 14: Edit playbook (TBD)
+## 16. Feature 15: Remove playbook (TBD)
