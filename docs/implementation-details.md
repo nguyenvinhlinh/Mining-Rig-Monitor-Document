@@ -47,6 +47,40 @@ erDiagram
 
 ```
 
+## 13. Pubsub channel summary
+
+```mermaid
+flowchart LR
+
+    cpu-gpu-mining-rig-index[pubsub: cpu-gpu-mining-rig-index]
+    cpu-gpu-mining-rig-index-operation-stats[pubsub:cpu-gpu-mining-rig-index-operation-stats]
+    cpu-gpu-mining-rig-id[pubsub: cpu-gpu-mining-rig:id]
+    cpu-gpu-mining-rig-operation-stats-id[pubsub: cpu-gpu-mining-rig-operation-stats:id]
+
+    asic-mining-rig-index[pubsub: asic-mining-rig-index]
+    asic-mining-rig-index-operation-stats[pubsub: asic-mining-rig-index-operation-stats]
+    asic-mining-rig-id[pubsuc: asic-mining-rig:id]
+    asic-mining-rig-operation-stats-id[pubsub: asic-mining-rig-operation-stats:id]
+
+    cpu-gpu-index-page[CPU/GPU index page]
+    cpu-gpu-show-page[CPU/GPU show page]
+
+    asic-index-page[ASIC index page]
+    asic-show-page[ASIC show page]
+
+
+    cpu-gpu-mining-rig-index --> cpu-gpu-index-page
+    cpu-gpu-mining-rig-index-operation-stats --> cpu-gpu-index-page
+    cpu-gpu-mining-rig-id --> cpu-gpu-show-page
+    cpu-gpu-mining-rig-operation-stats-id --> cpu-gpu-show-page
+
+    asic-mining-rig-index --> asic-index-page
+    asic-mining-rig-index-operation-stats --> asic-index-page
+    asic-mining-rig-id --> asic-show-page
+    asic-mining-rig-operation-stats-id --> asic-show-page
+```
+
+
 ## 3. Feature 1: Login
 The software is selfhost and  does not have user credentials system. At the time sysadmin deploy the `commander`, there is a configuration for **password**.
 
@@ -378,36 +412,3 @@ There are two pubsub channel using here:
 - `asic-mining-rig-operation-stats:id`: for mininig operational stats
 
 ## 12. Feature 11-> 15 (To be delivered)
-
-## 13. Pubsub channel summary
-
-```mermaid
-flowchart LR
-
-    cpu-gpu-mining-rig-index[pubsub: cpu-gpu-mining-rig-index]
-    cpu-gpu-mining-rig-index-operation-stats[pubsub:cpu-gpu-mining-rig-index-operation-stats]
-    cpu-gpu-mining-rig-id[pubsub: cpu-gpu-mining-rig:id]
-    cpu-gpu-mining-rig-operation-stats-id[pubsub: cpu-gpu-mining-rig-operation-stats:id]
-
-    asic-mining-rig-index[pubsub: asic-mining-rig-index]
-    asic-mining-rig-index-operation-stats[pubsub: asic-mining-rig-index-operation-stats]
-    asic-mining-rig-id[pubsuc: asic-mining-rig:id]
-    asic-mining-rig-operation-stats-id[pubsub: asic-mining-rig-operation-stats:id]
-
-    cpu-gpu-index-page[CPU/GPU index page]
-    cpu-gpu-show-page[CPU/GPU show page]
-
-    asic-index-page[ASIC index page]
-    asic-show-page[ASIC show page]
-
-
-    cpu-gpu-mining-rig-index --> cpu-gpu-index-page
-    cpu-gpu-mining-rig-index-operation-stats --> cpu-gpu-index-page
-    cpu-gpu-mining-rig-id --> cpu-gpu-show-page
-    cpu-gpu-mining-rig-operation-stats-id --> cpu-gpu-show-page
-
-    asic-mining-rig-index --> asic-index-page
-    asic-mining-rig-index-operation-stats --> asic-index-page
-    asic-mining-rig-id --> asic-show-page
-    asic-mining-rig-operation-stats-id --> asic-show-page
-```
