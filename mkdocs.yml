@@ -3,6 +3,9 @@ repo_url: https://github.com/nguyenvinhlinh/Mining-Rig-Monitor-Document
 repo_name: Github
 nav:
   - 'index.md'
+  - 'features.md'
+  - 'system-design-and-architect.md'
+  - 'implementation-details.md'
   - 'crawling-data.md'
 plugins:
     - mermaid2
