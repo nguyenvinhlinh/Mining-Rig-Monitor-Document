@@ -91,6 +91,33 @@ flowchart LR
     asic-mining-rig-operation-stats-id --> asic-show-page
 ```
 
+## 3. GenServer summary (NOT YET)
+This is a list of GenServer process support aggregate data.
+
+- ASIC Mining Rig Index:
+  - store latest stats of all mining rig including: hashrate, algo., power consumption, temperature.
+  - store hashrate history to render chart
+  - store temperature history to render chart
+  - store aggregated indexs of all mining rig including: total hashrate by algo, total power consumption.
+
+- CPU/GPU Mining Rig Index:
+  - store latest stats of all mining rig including: hashrate, algo., power consumption, temperature.
+  - store aggregated indexs of all mining rig including: total hashrate by algo, total power consumption.
+
+
+!!!Note "Why do we need extra layer of data, DB is enough?"
+
+    Due to remove/update stats  feature (asic/cpu/gpu) & aggregate indexs, there will be many READ operation from database.
+    Plus, there are many many operational logs sending to the Commander. Even though, we have message queue, but
+    the pressure is real for one single database.
+
+    This is a scenerio that we use extra layer, we want to render asic mining rig index  page with aggregated number such as total hashrate.
+    (1) We need to query the db for all available asic. ( condition less than 30-second-ping alive)
+    (2) Sum all the hashrate
+    If we have new operational data inserted into database, to calculate the total hashrate, we then need to start over from step (1).
+
+
+
 ## 3. Feature 1: Login
 The software is selfhost and  does not have user credentials system. At the time sysadmin deploy the `commander`, there is a configuration for **password**.
 
@@ -280,13 +307,39 @@ sequenceDiagram
     Commander ->> Commander: process subscribe to pubsub cpu-gpu-mining-rig-operation-stats
 ```
 
+This is a list of all data indexs displayed on this page.
+
+- Aggregated Data
+    - Total hashrate of all available CPU/GPU mining rig at the moment per crypto currency.
+      (pick latest data, group by crypto name, sum hashrate).
+    - How many cpu/gpu mining rigs running (pick latest data < 2min, count machine)
+    - Total power consumption of all available/running CPU/GPU mining rigs
+      (pick latest data, group by crypto name, sum hashrate)
+
+- Individual Data
+    - Hashrate
+    - Crypto Currency
+    - Max CPU Temperature
+    - All GPU Core Temperature
+    - All GPU Memory Temperature
+    - Power Consumption (A sum of all gpu power consumption)
+    - Uptime (count since Sentry started)
+
+- Chart
+    - Historical hashrate by crypto currency.
+
+Aggregated indexs should not abuse Database, we can use GenServer as a cache memory to avoid DB READ. At the time `Commander` insert a new mining log, GenServer update its memory.
+
+
+
 ## 8. Feature 6: View cpu/gpu mining rig detail
 
 This feature allows user view cpu/gpu mining rig details with realtime update data. All the data is updated in readtime.
 
 - mining rig name
 - mining rig specs
-- mining operational log: power consumption, hashrate, fan speed
+- mining operational index: power consumption, hashrate, fan speed
+- historical hashrate in chart
 
 When user visit this page, a socket connection established. On the web framework Phoenix, this socket connection process subscribe to a pubsub
 channel
