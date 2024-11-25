@@ -95,14 +95,14 @@ flowchart LR
 This is a list of GenServer process support aggregate data.
 
 - ASIC Mining Rig Index:
-  - store latest stats of all mining rig including: hashrate, algo., power consumption, temperature.
-  - store hashrate history to render chart
-  - store temperature history to render chart
-  - store aggregated indexs of all mining rig including: total hashrate by algo, total power consumption.
+    - store latest stats of all mining rig including: hashrate, algo., power consumption, temperature.
+    - store hashrate history to render chart
+    - store temperature history to render chart
+    - store aggregated indexs of all mining rig including: total hashrate by algo, total power consumption.
 
 - CPU/GPU Mining Rig Index:
-  - store latest stats of all mining rig including: hashrate, algo., power consumption, temperature.
-  - store aggregated indexs of all mining rig including: total hashrate by algo, total power consumption.
+    - store latest stats of all mining rig including: hashrate, algo., power consumption, temperature.
+    - store aggregated indexs of all mining rig including: total hashrate by algo, total power consumption.
 
 
 !!!Note "Why do we need extra layer of data, DB is enough?"
@@ -328,6 +328,10 @@ This is a list of all data indexs displayed on this page.
 - Chart
     - Historical hashrate by crypto currency.
 
+This is a wireframe for this feature.
+
+![001. CPU/GPU mining rig index](/images/001-cpu-gpu-rig-index.png)
+
 Aggregated indexs should not abuse Database, we can use GenServer as a cache memory to avoid DB READ. At the time `Commander` insert a new mining log, GenServer update its memory.
 
 
@@ -459,6 +463,9 @@ There are two pubsub channel that we use here:
 
 !!! Note "The pubsub channel does not store data. The real data is store in `GenServer` process, these process be update as sentry send data to `Commander`."
 
+This is a wireframe for asic mining rig index.
+![002. ASIC mining rig index](/images/002-asic-rig-index.png)
+
 ## 11. Feature 10: View ASIC mining rig detail
 ```mermaid
 sequenceDiagram
@@ -473,6 +480,9 @@ sequenceDiagram
 There are two pubsub channel using here:
 - `asic-mining-rig:id`: for mining rig data update, such as name
 - `asic-mining-rig-operation-stats:id`: for mininig operational stats
+
+This is a wireframe when sentry finished sending data to `Commander`.
+![3. ASIC Rig Index](/images/003-asic-rig-index.png)
 
 ## 12. Feature 11: Add new playbook (TBD)
 ## 13. Feature 12: View playbook (TBD)
