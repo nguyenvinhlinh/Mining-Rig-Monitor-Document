@@ -4,6 +4,10 @@
 The `commander` will be a web server program. Enduser using `commander` will need to open it with web browser such as google chrome, firefox. `cpu/gpu sentry` will be deploy on `cpu/gpu miner`.
 On the other hand, `asic sentry` which monitor many `asic miner` will be deployed on an different machine, but in the same network as `asic miner` to make sure that it can collect data from `asic miner`.
 
+!!!Note "Message Queue usage is only for enterprise version!"
+    At the selfhost version, due to low workload, there is no need for message queue, plus, the maintainance cost is too much
+    For a mining farm, I can't see the scale of more than 1000 `Sentry` bombard message to `Commander`.
+
 ```mermaid
 flowchart TB
     relational-database[(Relational DB)]

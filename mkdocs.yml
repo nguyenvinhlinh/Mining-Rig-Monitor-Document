@@ -6,6 +6,8 @@ nav:
   - '02-features.md'
   - '03-system-design-and-architect.md'
   - '04-implementation-details.md'
+  - '04a-pubsub-channel-summary.md'
+  - '04b-genserver-summary.md'
   - '05-deployment.md'
   - 'crawling-data.md'
 plugins:
