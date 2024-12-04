@@ -1,4 +1,4 @@
-# Implementation Details
+# 4. Implementation Details
 
 ## 1. Entity Relationship Diagram
 ```mermaid

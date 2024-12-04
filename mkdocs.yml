@@ -2,10 +2,11 @@ site_name: Mining Rig Monitor
 repo_url: https://github.com/nguyenvinhlinh/Mining-Rig-Monitor-Document
 repo_name: Github
 nav:
-  - 'index.md'
-  - 'features.md'
-  - 'system-design-and-architect.md'
-  - 'implementation-details.md'
+  - '01-introduction.md'
+  - '02-features.md'
+  - '03-system-design-and-architect.md'
+  - '04-implementation-details.md'
+  - '05-deployment.md'
   - 'crawling-data.md'
 plugins:
     - mermaid2

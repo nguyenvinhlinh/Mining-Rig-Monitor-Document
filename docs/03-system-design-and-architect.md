@@ -1,4 +1,4 @@
-# System Design and Architecture
+# 3. System Design and Architecture
 ## 1. Data payload processing
 
 The `commander` will be a web server program. Enduser using `commander` will need to open it with web browser such as google chrome, firefox. `cpu/gpu sentry` will be deploy on `cpu/gpu miner`.
