@@ -48,8 +48,17 @@ the data structure look like this:
 }
 ```
 
+Beside storing latest state, `AsicMiningRigIndex` GenServer also can do:
+
+- remove old operational data. An asic with latest record is older than current timestamp by 1 minutes should be remove. The asic is consider offline/dead.
+- when get update, `AsicMiningRigIndex` GenServer do broadcast to pubsub channel named:
+  - `asic-mining-rig-index`
+  - `asic-mining-rig-index-operation-stats`
+
 ## 2. ASIC Mining Rig Historical Index
 GenServer should be named `AsicMiningRigHistoricalIndex`, the data structure look similar to `AsicMiningRigIndex` but store in `List`.
+
+
 
 ```elixir
 %{

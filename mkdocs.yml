@@ -8,6 +8,8 @@ nav:
   - '04-implementation-details.md'
   - '04a-pubsub-channel-summary.md'
   - '04b-genserver-summary.md'
+  - '04c-cpu-gpu-related-features.md'
+  - '04d-asic-related-features.md'
   - '05-deployment.md'
   - 'crawling-data.md'
 plugins:
