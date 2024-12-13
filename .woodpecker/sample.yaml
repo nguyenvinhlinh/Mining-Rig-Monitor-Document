@@ -1,0 +1,14 @@
+when:
+  - event: manual
+
+steps:
+  - name: echo
+    image: dummy
+    commands: echo "hello woodpecker"
+    environment:
+      SLEEP: '1s'
+
+services:
+  echo:
+    image: dummy
+    commands: echo "i am a sevice"
