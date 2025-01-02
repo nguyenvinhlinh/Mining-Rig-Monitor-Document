@@ -19,7 +19,7 @@ gantt
         setup infra. docs server       :sids, after ssds, 2d
         setup rpm repo server,         :srps, after sids, 1w
 
-        setup Commander server using yum :scs, after srps, 1w
+        setup Commander server using yum :scs, after f10, 1w
         setup Sentry server using yum    :sss, after scs, 1w
         setup CD for Commander Server   :scdcs, after sss, 1w
         setup CD for Sentry Server      :scdss, after scdcs, 1w
@@ -31,10 +31,14 @@ gantt
         feature  9. View asic index    :f09, after f08, 1w
         feature 10. view asic detail   :f10, after f09, 1w
 
+        Milestone 1.0 ASIC: milestone, m1, after f10, 2m
+
         feature 2. add new cpu/gpu rig    :f02, after f10, 1w
         feature 3. edit cpu/gpu rig       :f03, after f02, 1w
         feature 4. remove cpu/gpu rig     :f04, after f03, 1w
         feature 5. view cpu/gpu rig index :f05, after f04, 1w
+
+        Milestone 2.0 CPU/GPU: milestone, m2, after f05, 2m
 
         feature 11. add new playbook for cpu/gpu rig  :f11, after f05, 1w
         feature 12. view playbook                     :f12, after f11, 1w
