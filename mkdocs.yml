@@ -1,6 +1,11 @@
 site_name: Mining Rig Monitor
+site_author: Nguyen Vinh Linh
+
 repo_url: https://github.com/nguyenvinhlinh/Mining-Rig-Monitor-Document
-repo_name: Github
+repo_name: nguyenvinhlinh/Mining-Rig-Monitor-Document
+
+copyright: Copyright &copy; 2024 - 2025 Nguyen Vinh Linh
+
 nav:
   - '01-introduction.md'
   - '02-features.md'
@@ -14,15 +19,19 @@ nav:
   - '05-deployment.md'
   - '06-project-management.md'
   - 'crawling-data.md'
+
 plugins:
     - mermaid2
     - panzoom:
         full_screen: True
+    - search
 
 theme:
   name: material
   features:
     - navigation.expand
+    - search.suggest
+    - search.highlight
 
 markdown_extensions:
   - admonition
