@@ -1,4 +1,4 @@
-# 4c. CPU/GPU Related Features
+# 4.4 CPU/GPU Related Features
 
 ## Feature 1: Login
 The software is selfhost and  does not have user credentials system. At the time sysadmin deploy the `commander`, there is a configuration for **password**.

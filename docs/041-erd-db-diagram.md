@@ -1,4 +1,4 @@
-# 4. Implementation Details
+# 4.1 ERD & DB diagrams
 
 ## 1. Entity Relationship Diagram
 ```mermaid

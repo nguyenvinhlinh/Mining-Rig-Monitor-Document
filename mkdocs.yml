@@ -5,12 +5,14 @@ nav:
   - '01-introduction.md'
   - '02-features.md'
   - '03-system-design-and-architect.md'
-  - '04-implementation-details.md'
-  - '04a-pubsub-channel-summary.md'
-  - '04b-genserver-summary.md'
-  - '04c-cpu-gpu-related-features.md'
-  - '04d-asic-related-features.md'
+  - '4. Implementation Details':
+      - '4.1 ERD & DB diagrams': '041-erd-db-diagram.md'
+      - '4.2 Pubsub channel summary':  '042-pubsub-channel-summary.md'
+      - '4.3 Genserver Summary': '043-genserver-summary.md'
+      - '4.4 CPU/GPU related features': '044-cpu-gpu-related-features.md'
+      - '4.5 ASIC related features': '045-asic-related-features.md'
   - '05-deployment.md'
+  - '06-project-management.md'
   - 'crawling-data.md'
 plugins:
     - mermaid2
@@ -24,3 +26,6 @@ theme:
 
 markdown_extensions:
   - admonition
+
+extra_css:
+  - style.css

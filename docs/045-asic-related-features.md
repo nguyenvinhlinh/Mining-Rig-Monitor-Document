@@ -1,4 +1,4 @@
-# 4d. ASIC Related Features
+# 4.5 ASIC Related Features
 
 ## Feature 7: Add new ASIC mining rig
 This feature requried users to do two phrases:
