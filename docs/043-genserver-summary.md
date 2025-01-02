@@ -1,4 +1,4 @@
-# 4b. GenServer summary
+# 4.3 GenServer summary
 This is a list of GenServer process support aggregate data.
 
 - ASIC Mining Rig Index:

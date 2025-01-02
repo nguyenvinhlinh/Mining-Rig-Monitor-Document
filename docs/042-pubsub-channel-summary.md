@@ -1,4 +1,4 @@
-# 4a. Pubsub channel summary
+# 4.2 Pubsub channel summary
 This software support rich UI/UI realtime update & interaction shared between all active login session. As a consequence, this is a list of pubsub channel.
 
 - `cpu-gpu-mining-rig-index`
