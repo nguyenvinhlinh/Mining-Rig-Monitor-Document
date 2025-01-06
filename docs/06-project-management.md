@@ -13,7 +13,7 @@ gantt
         setup woodpecker as CI,        :done, :swci, after wid, 2d
         setup vsftp server             :done, :svsftp, after swci, 2d
         setup spec. docs server        :done, :ssds, after svsftp, 2d
-        setup infra. docs server       ;done, :sids, after ssds, 2d
+        setup infra. docs server       :done, :sids, after ssds, 2d
         setup rpm repo server,         :srps, after sids, 1w
 
         setup Commander server using yum :scs, after f10, 1w
