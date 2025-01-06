@@ -3,6 +3,7 @@ hide:
   - navigation
   - toc
 ---
+
 # Project management
 ```mermaid
 gantt
@@ -24,7 +25,7 @@ gantt
         setup CD for Commander Server   :scdcs, after sss, 1w
         setup CD for Sentry Server      :scdss, after scdcs, 1w
     section Commander Features
-        feature  1. Login              :f01, 2025-01-01, 3d
+        feature  1. Login              :done, :f01, 2025-01-01, 3d
 
         feature  7. Add new asic       :f07, after f01, 1w
         feature  8. Remove asic        :f08, after f07, 1w
