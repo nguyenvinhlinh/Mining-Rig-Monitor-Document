@@ -11,7 +11,7 @@ nav:
   - '02-features.md'
   - '03-system-design-and-architect.md'
   - '4. Implementation Details':
-      - '4.1 ERD & DB diagrams': '041-erd-db-diagram.md'
+      - '4.1 ERD & DB diagrams': '04.1-erd-db-diagram.md'
       - '4.2 Pubsub channel summary':  '042-pubsub-channel-summary.md'
       - '4.3 Genserver Summary': '043-genserver-summary.md'
       - '4.4 CPU/GPU related features': '044-cpu-gpu-related-features.md'
