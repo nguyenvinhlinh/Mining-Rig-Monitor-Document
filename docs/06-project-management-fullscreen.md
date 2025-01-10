@@ -11,25 +11,25 @@ gantt
     dateFormat YYYY-MM-DD
 
     section Document
-        draft specification  docs      :done, :wsd, 2024-12-26, 20d
-        draft infrastructure docs      :done, :wid, after wsd, 5d
+        draft specification  docs      :done, wsd, 2024-12-26, 20d
+        draft infrastructure docs      :done, wid, after wsd, 5d
     section DEV Infrastructure
-        setup woodpecker as CI,        :done, :swci, after wid, 2d
-        setup vsftp server             :done, :svsftp, after swci, 2d
-        setup spec. docs server        :done, :ssds, after svsftp, 2d
-        setup infra. docs server       :done, :sids, after ssds, 2d
+        setup woodpecker as CI,        :done, swci, after wid, 2d
+        setup vsftp server             :done, svsftp, after swci, 2d
+        setup spec. docs server        :done, ssds, after svsftp, 2d
+        setup infra. docs server       :done, sids, after ssds, 2d
         setup rpm repo server,         :srps, after sids, 1w
 
-        setup Commander server using yum :scs, after f10, 1w
+        setup Commander server using yum :scs, after srps, 1w
         setup Sentry server using yum    :sss, after scs, 1w
         setup CD for Commander Server   :scdcs, after sss, 1w
         setup CD for Sentry Server      :scdss, after scdcs, 1w
     section Commander Features
-        feature  1. Login              :done, :f01, 2025-01-01, 3d
+        feature  1. Login              :done, f01, 2025-01-01, 3d
 
-        feature  7. Add new asic       :f07, after f01, 1w
-        feature  8. Remove asic        :f08, after f07, 1w
-        feature  9. View asic index    :f09, after f08, 1w
+        feature  7. Add new asic       :done, f07, after f01, 1w
+        feature  8. Remove asic        :done, f08, after f07, 1w
+        feature  9. View asic index    :f09, 2025-01-11, 1w
         feature 10. view asic detail   :f10, after f09, 1w
 
         Milestone 1.0 ASIC: milestone, m1, after f10, 2m
