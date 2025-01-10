@@ -1,43 +1,52 @@
 # 4.2 Pubsub channel summary
 This software support rich UI/UI realtime update & interaction shared between all active login session. As a consequence, this is a list of pubsub channel.
 
-- `cpu-gpu-mining-rig-index`
-- `cpu-gpu-mining-rig-index-operation-stats`
-- `cpu-gpu-mining-rig:id`
-- `cpu-gpu-mining-rig-operation-stats:id`
 
-- `asic-mining-rig-index`
-- `asic-mining-rig-index-operation-stats`
-- `asic-mining-rig-id:id`
-- `asic-mining-rig-operation-stats-id:id`
+- `flash_index`: for broadcast flash messages
+
+## CPU/GPU miner pubsub channels
+
+- `cpu_gpu_miner_index`
+- `cpu_gpu_miner_index_operation_stats`
+- `cpu_gpu_miner:id`
+- `cpu_gpu_miner_operation_stats:id`
+
+
+## ASIC miner pubsub channels
+
+- `asic_miner_index`
+- `asic_miner_index_operation_stats`
+- `asic_miner_id:id`
+- `asic_miner_operation_stats_id:id`
 
 ```mermaid
 flowchart LR
+    flash_index[pubsub: flash_index]
 
-    cpu-gpu-mining-rig-index[pubsub: cpu-gpu-mining-rig-index]
-    cpu-gpu-mining-rig-index-operation-stats[pubsub:cpu-gpu-mining-rig-index-operation-stats]
-    cpu-gpu-mining-rig-id[pubsub: cpu-gpu-mining-rig:id]
-    cpu-gpu-mining-rig-operation-stats-id[pubsub: cpu-gpu-mining-rig-operation-stats:id]
+    cpu_gpu_miner_index[pubsub: cpu_gpu_miner_index]
+    cpu_gpu_miner_index_operation_stats[pubsub:cpu_gpu_miner_index_operation_stats]
+    cpu_gpu_miner_id[pubsub: cpu_gpu_miner:id]
+    cpu_gpu_miner_operation_stats_id[pubsub: cpu_gpu_miner_operation_stats:id]
 
-    asic-mining-rig-index[pubsub: asic-mining-rig-index]
-    asic-mining-rig-index-operation-stats[pubsub: asic-mining-rig-index-operation-stats]
-    asic-mining-rig-id[pubsuc: asic-mining-rig:id]
-    asic-mining-rig-operation-stats-id[pubsub: asic-mining-rig-operation-stats:id]
+    asic_miner_index[pubsub: asic_miner_index]
+    asic_miner_index_operation_stats[pubsub: asic_miner_index_operation_stats]
+    asic_miner_id[pubsub: asic_miner_id:id]
+    asic_miner_operation_stats_id[pubsub: asic_miner_operation_stats_id:id]
 
-    cpu-gpu-index-page[CPU/GPU index page]
-    cpu-gpu-show-page[CPU/GPU show page]
+    cpu_gpu_index_page[CPU/GPU index page]
+    cpu_gpu_show_page[CPU/GPU show page]
 
-    asic-index-page[ASIC index page]
-    asic-show-page[ASIC show page]
+    asic_index_page[ASIC index page]
+    asic_show_page[ASIC show page]
 
 
-    cpu-gpu-mining-rig-index --> cpu-gpu-index-page
-    cpu-gpu-mining-rig-index-operation-stats --> cpu-gpu-index-page
-    cpu-gpu-mining-rig-id --> cpu-gpu-show-page
-    cpu-gpu-mining-rig-operation-stats-id --> cpu-gpu-show-page
+    cpu_gpu_miner_index --> cpu_gpu_index_page
+    cpu_gpu_miner_index_operation_stats --> cpu_gpu_index_page
+    cpu_gpu_miner_id --> cpu_gpu_show_page
+    cpu_gpu_miner_operation_stats_id --> cpu_gpu_show_page
 
-    asic-mining-rig-index --> asic-index-page
-    asic-mining-rig-index-operation-stats --> asic-index-page
-    asic-mining-rig-id --> asic-show-page
-    asic-mining-rig-operation-stats-id --> asic-show-page
+    asic_miner_index --> asic_index_page
+    asic_miner_index_operation_stats --> asic_index_page
+    asic_miner_id --> asic_show_page
+    asic_miner_operation_stats_id --> asic_show_page
 ```
