@@ -35,6 +35,7 @@ theme:
 
 markdown_extensions:
   - admonition
+  - attr_list
 
 extra_css:
   - style.css
