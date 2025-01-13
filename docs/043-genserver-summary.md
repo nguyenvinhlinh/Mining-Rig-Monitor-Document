@@ -25,35 +25,45 @@ This is a list of GenServer process support aggregate data.
 
 
 
-## 1. ASIC Mining Rig Index
-- ASIC Mining Rig Index, the GenServer should be named `AsicMiningRigIndex`, it stores latest stats of all mining rig including:
-    - hashrate
-    - hashrate unit of measurement
-    - coin
-    - power consumption in walt
-    - temperature in celcius
+## 1. ASIC Miner Operational Index
+- ASIC Mining Rig Index, the GenServer should be named `AsicMinerOperationalIndex`, it stores data in a map.
+The key is `asic_miner_id``AsicMinerLog`, and value is `AsicMinerLog`.
 
-the data structure look like this:
-
-```elixir
-%{
-  asic_id: %{
-             hashrate: 0,
-             hashrate_uom: "gh/s",
-             coin: "kaspa",
-             power_consumption: 1234,
-             temperature_list: [sensor1, sensor2, sensor3]
-             timestamp: %NaiveDatetime{}
-            }
-}
-```
 
 Beside storing latest state, `AsicMiningRigIndex` GenServer also can do:
 
 - remove old operational data. An asic with latest record is older than current timestamp by 1 minutes should be remove. The asic is consider offline/dead.
-- when get update, `AsicMiningRigIndex` GenServer do broadcast to pubsub channel named:
-  - `asic-mining-rig-index`
-  - `asic-mining-rig-index-operation-stats`
+- when the `AsicMinerOperationalIndex`  get update, `AsicMiningRigIndex` GenServer will do broadcast **(NOT IMMEDIATELY)** to pubsub channel named:
+    - `asic_miner_index`
+    - `asic_miner_aggregated_index`
+    - The main reason that `AsicMinerOperationalIndex` does not broadcast instantly, it will spam the socket channel from `commander` to `web browser`.
+
+
+`GenServer-AsicMinerOperationalIndex`'s state example:
+
+```elixir
+%{
+    asic_miner_id => %AsicMinerLog{}
+}
+```
+
+In addition, **each one second**, this `GenServer-AsicMinerOperationalIndex`  will broadcast operational data. This is an example:
+```elixir
+%{
+      asic_miner_map: %{asic_miner_id => %AsicMiner{} },
+      asic_miner_operational_map: %{asic_miner_id => %AsicMinerLog{} },
+      asic_miner_aggregated_index: %{
+          coin_hashrate_map: %{"Bitcoin" => {120, "TH/s"},
+                               "Kaspa" => {20, "TH/s"}
+                              },
+          total_power: 7000,
+          asic_miner_alive: "2/3"
+      }
+}
+```
+
+
+
 
 ## 2. ASIC Mining Rig Historical Index
 GenServer should be named `AsicMiningRigHistoricalIndex`, the data structure look similar to `AsicMiningRigIndex` but store in `List`.

@@ -29,8 +29,8 @@ gantt
 
         feature  7. Add new asic       :done, f07, after f01, 1w
         feature  8. Remove asic        :done, f08, after f07, 1w
-        feature  9. View asic index    :f09, 2025-01-11, 1w
-        feature 10. view asic detail   :f10, after f09, 1w
+        feature  9. View asic index    :done, f09, 2025-01-11, 2025-01-13
+        feature 10. view asic detail   :f10, 2025-01-14, 1w
 
         Milestone 1.0 ASIC: milestone, m1, after f10, 2m
 

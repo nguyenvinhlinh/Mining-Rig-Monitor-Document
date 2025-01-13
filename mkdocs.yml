@@ -15,7 +15,7 @@ nav:
       - '4.2 Pubsub channel summary':  '042-pubsub-channel-summary.md'
       - '4.3 Genserver Summary': '043-genserver-summary.md'
       - '4.4 CPU/GPU related features': '044-cpu-gpu-related-features.md'
-      - '4.5 ASIC related features': '045-asic-related-features.md'
+      - '4.5 ASIC related features': '04.5-asic-related-features.md'
   - '05-deployment.md'
   - '06-project-management.md'
   - 'crawling-data.md'

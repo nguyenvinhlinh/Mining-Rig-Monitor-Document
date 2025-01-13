@@ -14,8 +14,9 @@ This software support rich UI/UI realtime update & interaction shared between al
 
 ## ASIC miner pubsub channels
 
-- `asic_miner_index`
-- `asic_miner_index_operation_stats`
+- `asic_miner_index_channel`
+- `asic_miner_index_operational_channel`
+
 - `asic_miner_id:id`
 - `asic_miner_operation_stats_id:id`
 
@@ -29,7 +30,7 @@ flowchart LR
     cpu_gpu_miner_operation_stats_id[pubsub: cpu_gpu_miner_operation_stats:id]
 
     asic_miner_index[pubsub: asic_miner_index]
-    asic_miner_index_operation_stats[pubsub: asic_miner_index_operation_stats]
+    asic_miner_aggregated_index[pubsub: asic_miner_index_operation_stats]
     asic_miner_id[pubsub: asic_miner_id:id]
     asic_miner_operation_stats_id[pubsub: asic_miner_operation_stats_id:id]
 
