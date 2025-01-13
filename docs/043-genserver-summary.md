@@ -27,7 +27,8 @@ This is a list of GenServer process support aggregate data.
 
 ## 1. ASIC Miner Operational Index
 - ASIC Mining Rig Index, the GenServer should be named `AsicMinerOperationalIndex`, it stores data in a map.
-The key is `asic_miner_id``AsicMinerLog`, and value is `AsicMinerLog`.
+The key is `asic_miner_id`, and value is `AsicMinerLog`.
+- Found source code here: [github link](https://github.com/nguyenvinhlinh/Mining-Rig-Monitor/blob/dev/lib/mining_rig_monitor/gen_server/asic_miner_operational_index.ex)
 
 
 Beside storing latest state, `AsicMiningRigIndex` GenServer also can do:
