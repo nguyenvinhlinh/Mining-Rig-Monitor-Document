@@ -18,7 +18,7 @@ gantt
         setup vsftp server             :done, svsftp, after swci, 2d
         setup spec. docs server        :done, ssds, after svsftp, 2d
         setup infra. docs server       :done, sids, after ssds, 2d
-        setup rpm repo server,         :srps, after sids, 1w
+        setup rpm repo server,         :srps, after f10, 1w
 
         setup Commander server using yum :scs, after srps, 1w
         setup Sentry server using yum    :sss, after scs, 1w
@@ -30,11 +30,12 @@ gantt
         feature  7. Add new asic       :done, f07, after f01, 1w
         feature  8. Remove asic        :done, f08, after f07, 1w
         feature  9. View asic index    :done, f09, 2025-01-11, 2025-01-13
-        feature 10. view asic detail   :f10, 2025-01-14, 1w
+        feature 10. view asic detail   :done, f10, 2025-01-13, 2025-01-15
+        unit test for milestone 1      :ut1, 2025-01-15, 1w
 
-        Milestone 1.0 ASIC: milestone, m1, after f10, 2m
+        Milestone 1.0 ASIC:            milestone, m1, after ut1, 2m
 
-        feature 2. add new cpu/gpu rig    :f02, after f10, 1w
+        feature 2. add new cpu/gpu rig    :f02, after m1, 1w
         feature 3. edit cpu/gpu rig       :f03, after f02, 1w
         feature 4. remove cpu/gpu rig     :f04, after f03, 1w
         feature 5. view cpu/gpu rig index :f05, after f04, 1w

@@ -4,7 +4,7 @@ This software support rich UI/UI realtime update & interaction shared between al
 
 - `flash_index`: for broadcast flash messages
 
-## CPU/GPU miner pubsub channels
+## CPU/GPU miner pubsub channels (TBD)
 
 - `cpu_gpu_miner_index`
 - `cpu_gpu_miner_index_operation_stats`
@@ -17,8 +17,8 @@ This software support rich UI/UI realtime update & interaction shared between al
 - `asic_miner_index_channel`
 - `asic_miner_index_operational_channel`
 
-- `asic_miner_id:id`
-- `asic_miner_operation_stats_id:id`
+- `asic_miner_channel:id`
+- `asic_miner_operational_channel:id`
 
 ```mermaid
 flowchart LR
@@ -30,9 +30,9 @@ flowchart LR
     cpu_gpu_miner_operation_stats_id[pubsub: cpu_gpu_miner_operation_stats:id]
 
     asic_miner_index[pubsub: asic_miner_index]
-    asic_miner_aggregated_index[pubsub: asic_miner_index_operation_stats]
-    asic_miner_id[pubsub: asic_miner_id:id]
-    asic_miner_operation_stats_id[pubsub: asic_miner_operation_stats_id:id]
+    asic_miner_index_operational_channel[pubsub: asic_miner_index_operational_channel]
+    asic_miner_channel:id[pubsub: asic_miner_channel:id]
+    asic_miner_operational_channel:id[pubsub: asic_miner_operational_channel:id]
 
     cpu_gpu_index_page[CPU/GPU index page]
     cpu_gpu_show_page[CPU/GPU show page]
