@@ -1,4 +1,4 @@
-# Release command
+# Release commands
 
 Environment variables:
 
