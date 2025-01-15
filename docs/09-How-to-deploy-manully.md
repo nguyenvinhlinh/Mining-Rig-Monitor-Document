@@ -91,3 +91,9 @@ server[1361153]: 00:31:22.069 [info] [AsicMinerOperationalIndex][broadcast_opera
 server[1361153]: 00:31:23.071 [info] [AsicMinerOperationalIndex][broadcast_operational_data] Starting.
 server[1361153]: 00:31:23.754 [info] [AsicMinerOperationalIndex][nillify_offline_miner] Starting.
 ```
+
+Now, you can visit [http://127.0.0.1:4000](http://127.0.0.1:4000).
+
+![Login page](./images/007-login-page.png)
+
+To create account, please check [Release Commands Page](../10-release-avaiable-command/)

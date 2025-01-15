@@ -1,4 +1,4 @@
-# How to release manually?
+# How to make release?
 
 Go to source code directory
 ```shell
@@ -88,6 +88,18 @@ To list all commands:
 
 ```
 
+
+Now, this is the release directory, `_build/prod/rel/mining_rig_monitor`
+```shell
+➜ mining_rig_monitor ✗ tree -L 1 _build/prod/rel/mining_rig_monitor
+_build/prod/rel/mining_rig_monitor
+├── bin
+├── erts-15.0
+├── lib
+└── releases
+```
+
+You can visit this [page](../09-How-to-deploy-manully/) to deploy manually!
 
 
 Reference:

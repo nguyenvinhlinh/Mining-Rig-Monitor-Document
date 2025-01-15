@@ -12,5 +12,32 @@ mining_rig_monitor
 └── releases
 ```
 
-## Systemd service
-## Firewall service
+## Systemd `/etc/systemd/system/mining_rig_monitor.service`
+```
+[Unit]
+Description=Mining Rig Monitor
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/mining_rig_monitor
+EnvironmentFile=/opt/mining_rig_monitor/.mining_rig_monitor.env
+ExecStart=/opt/mining_rig_monitor/bin/server
+ExecStop=/opt/mining_rig_monitor/bin/mining_rig_monitor stop
+User=nguyenvinhlinh
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## Systemd environment file `/opt/mining_rig_monitor/.mining_rig_monitor.env`
+```text
+SECRET_KEY_BASE=
+DATABASE_URL=ecto://USER:PASS@HOST/database
+PORT=4000
+PHX_HOST=127.0.0.1
+```
+
+## Firewall service (TBD)
+Under nginx reverse proxy!
