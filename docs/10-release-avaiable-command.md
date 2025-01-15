@@ -1,0 +1,47 @@
+# Release command
+
+Environment variables:
+
+- `SECRET_KEY_BASE`: `mix phx.gen.secret`
+- `DATABASE_URL`
+
+**Before executing any release command, it's essential to set environment variables first!**
+This is an example!
+```shell
+export SECRET_KEY_BASE=XXX XXX XXX
+export DATABASE_URL=ecto://USER:PASSWORD@DB_HOST:PORT/DB_NAME
+```
+
+## [1] Migrate database
+
+- Option 1:
+```shell
+_build/prod/rel/mining_rig_monitor/bin/mining_rig_monitor eval "MiningRigMonitor.Release.migrate"
+```
+- Option 2:
+```shell
+_build/prod/rel/mining_rig_monitor/bin/migrate
+```
+
+## [2] Start server
+- Option 1:
+```shell
+PHX_SERVER=true _build/prod/rel/mining_rig_monitor/bin/mining_rig_monitor eval "MiningRigMonitor.Release.migrate"
+```
+
+- Option 2:
+```shell
+_build/prod/rel/mining_rig_monitor/bin/server
+```
+
+## [2] Create new account
+
+```shell
+_build/prod/rel/mining_rig_monitor/bin/mining_rig_monitor eval "MiningRigMonitor.Release.create_account(\"--email admin@gmail.com\")"
+```
+
+## [3] Reset account password
+```shell
+_build/prod/rel/mining_rig_monitor/bin/mining_rig_monitor eval "MiningRigMonitor.Release.reset_account_password(\"--email admin@gmail.com\")"
+
+```

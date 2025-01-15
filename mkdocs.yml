@@ -19,6 +19,12 @@ nav:
   - '05-deployment.md'
   - '06-project-management.md'
   - 'crawling-data.md'
+  - 'How-To':
+      - '07-how-to-release-manually.md'
+      - '09-How-to-deploy-manully.md'
+      - '08-where-are-file-installed.md'
+  - '10-release-avaiable-command.md'
+
 
 plugins:
     - mermaid2
