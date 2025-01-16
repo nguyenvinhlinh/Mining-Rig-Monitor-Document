@@ -10,6 +10,7 @@ nav:
   - '01-introduction.md'
   - '02-features.md'
   - '03-system-design-and-architect.md'
+
   - '4. Mining Rig Monitor':
       - '4.1 ERD & DB diagrams': '04.01-erd-db-diagram.md'
       - '4.2 Pubsub channel summary':  '04.02-pubsub-channel-summary.md'
@@ -17,7 +18,7 @@ nav:
       - '4.4 CPU/GPU related features': '04.04-cpu-gpu-related-features.md'
       - '4.5 ASIC related features': '04.05-asic-related-features.md'
       - '4.6 Release Commands': '04.06-release-commands.md'
-      - 'How-To':
+      - '4.7 How-To':
           - '04.08-how-to-release-manually.md'
           - '04.09-How-to-deploy-manully.md'
           - '04.10-where-are-file-installed.md'
