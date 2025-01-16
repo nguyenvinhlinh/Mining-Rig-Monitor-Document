@@ -24,7 +24,8 @@ nav:
           - '04.10-where-are-file-installed.md'
 
   - '5. ASIC Sentry':
-      - '5.1. ASIC Sentry - Database Diagram': '12-asic-sentry-db.md'
+      - '5.1 Introduction': '05.01-introduction.md'
+      - '5.2. Database Diagram': '05.02-asic-sentry-db.md'
       - 'crawling-data.md'
   - '6. Project Management': '06-project-management.md'
 
