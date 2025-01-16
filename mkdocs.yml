@@ -10,20 +10,22 @@ nav:
   - '01-introduction.md'
   - '02-features.md'
   - '03-system-design-and-architect.md'
-  - '4. Implementation Details':
-      - '4.1 ERD & DB diagrams': '04.1-erd-db-diagram.md'
-      - '4.2 Pubsub channel summary':  '042-pubsub-channel-summary.md'
-      - '4.3 Genserver Summary': '043-genserver-summary.md'
-      - '4.4 CPU/GPU related features': '044-cpu-gpu-related-features.md'
-      - '4.5 ASIC related features': '04.5-asic-related-features.md'
-  - '05-deployment.md'
-  - '06-project-management.md'
-  - 'crawling-data.md'
-  - 'How-To':
-      - '07-how-to-release-manually.md'
-      - '09-How-to-deploy-manully.md'
-      - '08-where-are-file-installed.md'
-  - '10-release-avaiable-command.md'
+  - '4. Mining Rig Monitor':
+      - '4.1 ERD & DB diagrams': '04.01-erd-db-diagram.md'
+      - '4.2 Pubsub channel summary':  '04.02-pubsub-channel-summary.md'
+      - '4.3 Genserver Summary': '04.03-genserver-summary.md'
+      - '4.4 CPU/GPU related features': '04.04-cpu-gpu-related-features.md'
+      - '4.5 ASIC related features': '04.05-asic-related-features.md'
+      - '4.6 Release Commands': '04.06-release-commands.md'
+      - 'How-To':
+          - '04.08-how-to-release-manually.md'
+          - '04.09-How-to-deploy-manully.md'
+          - '04.10-where-are-file-installed.md'
+
+  - '5. ASIC Sentry':
+      - '5.1. ASIC Sentry - Database Diagram': '12-asic-sentry-db.md'
+      - 'crawling-data.md'
+  - '6. Project Management': '06-project-management.md'
 
 
 plugins:
