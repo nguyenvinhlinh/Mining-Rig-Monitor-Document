@@ -18,10 +18,11 @@ gantt
         setup vsftp server             :done, svsftp, after swci, 2d
         setup spec. docs server        :done, ssds, after svsftp, 2d
         setup infra. docs server       :done, sids, after ssds, 2d
-        setup rpm repo server,         :srps, after f10, 1w
 
-        setup Commander server using yum :scs, after srps, 1w
+
+        setup Commander server using yum :done, scs, 2025-01-24, 2025-02-04
         setup Sentry server using yum    :sss, after scs, 1w
+        setup rpm repo server,          :srps, after sss, 1w
         setup CD for Commander Server   :scdcs, after sss, 1w
         setup CD for Sentry Server      :scdss, after scdcs, 1w
     section Commander Features
@@ -31,11 +32,11 @@ gantt
         feature  8. Remove asic        :done, f08, after f07, 1w
         feature  9. View asic index    :done, f09, 2025-01-11, 2025-01-13
         feature 10. view asic detail   :done, f10, 2025-01-13, 2025-01-15
-        unit test for milestone 1      :ut1, 2025-01-15, 1w
+        unit test for milestone 1      :done, ut1, 2025-01-15, 2025-01-23
 
-        Milestone 1.0 ASIC:            milestone, m1, after ut1, 2m
+        Milestone 1.0 ASIC:            milestone, m1, 2025-01-23, 4m
 
-        feature 2. add new cpu/gpu rig    :f02, after m1, 1w
+        feature 2. add new cpu/gpu rig    :f02, after scs, 1w
         feature 3. edit cpu/gpu rig       :f03, after f02, 1w
         feature 4. remove cpu/gpu rig     :f04, after f03, 1w
         feature 5. view cpu/gpu rig index :f05, after f04, 1w
@@ -49,9 +50,9 @@ gantt
         feature 15. remove playbook                   :f15, after f14, 1w
 
     section Sentry(ASIC) Features
-        feature X. Assign ASICs to Sentry    :fx,  after f10, 1w
-        feature X+1. Collect log from ASICs  :fx1, after fx,  1w
-        feature X+2. Send log to Commander   :fx2, after fx1, 1w
+        feature 1. Assign ASICs to Sentry    :done, aats, 2025-01-15, 2025-01-21
+        feature 2. Collect log from ASICs    :done, clfa, 2025-01-20, 2025-01-21
+        feature 3. Send log to Commander     :done, sltc, 2025-01-21, 2025-01-22
 
     section Sentry(CPU/GPU) Features
         feature Y. Assign rig to sentry    :fy, after f05, 1w
