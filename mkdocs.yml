@@ -32,6 +32,7 @@ nav:
       - '5.3 How-To':
           - 'How to make release?': '05.03.01-How-to-release-manually.md'
           - 'How to deploy manually?': '05.03.02-How-to-deploy-manually.md'
+          - 'How to configure api_url?': '05.03.03-How-to-find-mininig_rig_commander_api_url.md'
           - '05.03.01-How-to-make-rpm-package.md'
       - 'crawling-data.md'
   - '6. Project Management': '06-project-management.md'

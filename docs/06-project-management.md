@@ -21,7 +21,7 @@ gantt
 
 
         setup Commander server using yum :done, scs, 2025-01-24, 2025-02-04
-        setup Sentry server using yum    :sss, 2025-01-31, 1w
+        setup Sentry server using yum    :done, sss, 2025-01-31, 2025-02-05
         setup rpm repo server,          :srps, after sss, 1w
         setup CD for Commander Server   :scdcs, after sss, 1w
         setup CD for Sentry Server      :scdss, after scdcs, 1w
