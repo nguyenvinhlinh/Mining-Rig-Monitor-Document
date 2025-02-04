@@ -28,7 +28,11 @@ nav:
 
   - '5. ASIC Sentry':
       - '5.1 Introduction': '05.01-introduction.md'
-      - '5.2. Database Diagram': '05.02-asic-sentry-db.md'
+      - '5.2 Database Diagram': '05.02-asic-sentry-db.md'
+      - '5.3 How-To':
+          - 'How to make release?': '05.03.01-How-to-release-manually.md'
+          - 'How to deploy manually?': '05.03.02-How-to-deploy-manually.md'
+          - '05.03.01-How-to-make-rpm-package.md'
       - 'crawling-data.md'
   - '6. Project Management': '06-project-management.md'
 
