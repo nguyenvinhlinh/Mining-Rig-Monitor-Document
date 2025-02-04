@@ -22,6 +22,8 @@ nav:
           - '04.08-how-to-release-manually.md'
           - '04.09-How-to-deploy-manully.md'
           - '04.10-where-are-file-installed.md'
+          - '04.11-How-to-deploy-with-rpm.md'
+          - '04.12-How-to-use-nginx-as-reverse-proxy.md'
 
   - '5. ASIC Sentry':
       - '5.1 Introduction': '05.01-introduction.md'
