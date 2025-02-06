@@ -32,8 +32,10 @@ nav:
       - '5.3 How-To':
           - 'How to make release?': '05.03.01-How-to-release-manually.md'
           - 'How to deploy manually?': '05.03.02-How-to-deploy-manually.md'
+          - 'How to deploy with rpm?' : '05.03.04-How-to-deploy-with-rpm.md'
           - 'How to configure api_url?': '05.03.03-How-to-find-mininig_rig_commander_api_url.md'
           - 'Where are file installed?': '05.03.03-Where-are-file-installed.md'
+          - 'How to setup basic auth & ssl with NGINX': '05.03.05-How-to-setup-basic-auth-ssl.md'
           - '05.03.01-How-to-make-rpm-package.md'
       - 'crawling-data.md'
   - '6. Project Management': '06-project-management.md'
@@ -55,6 +57,13 @@ theme:
 markdown_extensions:
   - admonition
   - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 extra_css:
   - style.css
