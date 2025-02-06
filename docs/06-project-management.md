@@ -5,7 +5,8 @@ hide:
 ---
 
 # 6. Project management
-```mermaid
+
+``` mermaid
 gantt
     title Mining Rig Monitor
     dateFormat YYYY-MM-DD
