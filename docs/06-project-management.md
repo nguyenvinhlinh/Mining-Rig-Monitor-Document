@@ -37,10 +37,11 @@ gantt
 
         Milestone 1.0 ASIC:            milestone, m1, 2025-01-23, 4m
 
-        feature 2. add new cpu/gpu rig    :f02, after scs, 1w
-        feature 3. edit cpu/gpu rig       :f03, after f02, 1w
-        feature 4. remove cpu/gpu rig     :f04, after f03, 1w
-        feature 5. view cpu/gpu rig index :f05, after f04, 1w
+        feature 2. add new cpu/gpu rig    :done, f02, 2025-02-07, 2025-02-08
+        feature 3. edit cpu/gpu rig       :done, f03, 2025-02-08, 2025-02-09
+        feature 4. remove cpu/gpu rig     :done, f04, 2025-02-08, 2025-02-09
+        feature 6. show cpu/gpu miner     :done, f06, 2025-02-08, 2025-02-22
+        feature 5. view cpu/gpu rig index :done, :f05, after f06, 2025-03-03
 
         Milestone 2.0 CPU/GPU: milestone, m2, after f05, 2m
 
