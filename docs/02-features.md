@@ -11,6 +11,7 @@ flowchart LR
     cpu-gpu-mining-rig[CPU/GPU Mining Rig]
     asic-mining-rig[ASIC Mining Rig]
     cpu-gpu-playbook[CPU/GPU Playbook]
+    address-book[Address]
 
     User --> f1([1. Login])
 
@@ -58,4 +59,10 @@ flowchart LR
 
     cpu-gpu-mining-rig --> f15([15. Remove playbook])
     f15 --> cpu-gpu-playbook
+
+
+    address-book --> f16[16. Address Index]
+    address-book --> f17[17. Add new address]
+    address-book --> f18[18. Modify address]
+    address-book --> f19[18. Remove address]
 ```
