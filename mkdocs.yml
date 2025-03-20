@@ -38,6 +38,11 @@ nav:
           - 'How to setup basic auth & ssl with NGINX': '05.03.05-How-to-setup-basic-auth-ssl.md'
           - '05.03.01-How-to-make-rpm-package.md'
       - 'crawling-data.md'
+  - '6. CPU/GPU Sentry':
+      - '6.1 Features':
+          - '6.1.0 Feature List': '06.01-cpu-gpu-sentry-feature-list.md'
+          - '6.1.1 Fetching new playbook': '06.01.01-feature-regular-fetching-mining-playbooks.md'
+
   - '6. Project Management': '06-project-management.md'
 
 
