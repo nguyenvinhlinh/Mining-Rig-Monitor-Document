@@ -42,6 +42,9 @@ nav:
       - '6.1 Features':
           - '6.1.0 Feature List': '06.01-cpu-gpu-sentry-feature-list.md'
           - '6.1.1 Fetching new playbook': '06.01.01-feature-regular-fetching-mining-playbooks.md'
+      - '6.2 Architecture':
+          - '6.2.1 GenServer Summary': '06.02.01-Genserver-summary.md'
+
 
   - '6. Project Management': '06-project-management.md'
 
