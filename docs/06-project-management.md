@@ -41,15 +41,14 @@ gantt
         feature 3. edit cpu/gpu rig       :done, f03, 2025-02-08, 2025-02-09
         feature 4. remove cpu/gpu rig     :done, f04, 2025-02-08, 2025-02-09
         feature 6. show cpu/gpu miner     :done, f06, 2025-02-08, 2025-02-22
-        feature 5. view cpu/gpu rig index :done, :f05, after f06, 2025-03-03
+        feature 5. view cpu/gpu rig index :done, f05, 2025-02-22, 2025-03-03
 
-        Milestone 2.0 CPU/GPU: milestone, m2, after f05, 2m
+        Milestone 2.0 CPU/GPU: milestone, m2, 2025-03-03, 2m
 
-        feature 11. add new playbook for cpu/gpu rig  :f11, after f05, 1w
-        feature 12. view playbook                     :f12, after f11, 1w
-        feature 13. view all playbook                 :f13, after f12, 1w
-        feature 14. edit playbook                     :f14, after f13, 1w
-        feature 15. remove playbook                   :f15, after f14, 1w
+        feature 11. add new playbook for cpu/gpu rig  :done, f11, 2025-03-03, 2025-03-10
+        feature 13. view all playbook                 :done, f13, 2025-03-10, 2025-03-17
+        feature 14. edit playbook                     :done, f14, 2025-03-17, 2025-03-20
+        feature 15. remove playbook                   :done, f15, 2025-03-20, 2025-03-22
 
     section Sentry(ASIC) Features
         feature 1. Assign ASICs to Sentry    :done, aats, 2025-01-15, 2025-01-21
@@ -57,8 +56,8 @@ gantt
         feature 3. Send log to Commander     :done, sltc, 2025-01-21, 2025-01-22
 
     section Sentry(CPU/GPU) Features
-        feature Y. Assign rig to sentry    :fy, after f05, 1w
-        feature Y+1. Collect log from rig  :fy1, after fy, 1w
-        feature Y+2. Send log to Commander :fy2, after fy1, 1w
+        feature 1. Assign rig to sentry    :fy,  after f05, 1w
+        feature 2. Collect log from rig    :fy1, after fy, 1w
+        feature 3. Send log to Commander   :fy2, after fy1, 1w
 
 ```
