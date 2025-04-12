@@ -56,8 +56,8 @@ gantt
         feature 3. Send log to Commander     :done, sltc, 2025-01-21, 2025-01-22
 
     section Sentry(CPU/GPU) Features
-        feature 1. Assign rig to sentry    :fy,  after f05, 1w
-        feature 2. Collect log from rig    :fy1, after fy, 1w
-        feature 3. Send log to Commander   :fy2, after fy1, 1w
-
+        feature 1. Assign rig to sentry    :done, cg01, 2025-03-03, 2025-04-12
+        feature 2. Collect log from rig    :done, cg02, 2025-03-03, 2025-04-12
+        feature 3. Send log to Commander   :done, cg03, 2025-03-03, 2025-04-12
+        feature 4. Fetch and run mining playbook :done, cg04, 2025-03-03, 2025-04-12
 ```
