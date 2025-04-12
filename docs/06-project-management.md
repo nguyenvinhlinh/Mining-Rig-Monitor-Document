@@ -60,4 +60,5 @@ gantt
         feature 2. Collect log from rig    :done, cg02, 2025-03-03, 2025-04-12
         feature 3. Send log to Commander   :done, cg03, 2025-03-03, 2025-04-12
         feature 4. Fetch and run mining playbook :done, cg04, 2025-03-03, 2025-04-12
+        Milestone 3.0 CPU/GPU: milestone, m2, 2025-04-12, 2m
 ```
