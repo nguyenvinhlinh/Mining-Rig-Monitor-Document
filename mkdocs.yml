@@ -19,12 +19,14 @@ nav:
       - '4.5 ASIC related features': '04.05-asic-related-features.md'
       - '4.6 Release Commands': '04.06-release-commands.md'
       - '4.7 How-To':
-          - '04.08-how-to-release-manually.md'
-          - '04.09-How-to-deploy-manully.md'
-          - '04.10-where-are-file-installed.md'
-          - '04.11-How-to-deploy-with-rpm.md'
-          - '04.12-How-to-use-nginx-as-reverse-proxy.md'
-          - '04.13-How-to-make-rpm-package.md'
+          - '04.07.01-how-to-release-manually.md'
+          - '04.07.02-How-to-deploy-manully.md'
+          - '04.07.03-where-are-file-installed.md'
+          - '04.07.04-How-to-deploy-with-rpm.md'
+          - '04.07.05-How-to-use-nginx-as-reverse-proxy.md'
+          - '04.07.06-How-to-make-rpm-package.md'
+      - '4.8 HTML Templates': '04.08-html-templates.md'
+
 
   - '5. ASIC Sentry':
       - '5.1 Introduction': '05.01-introduction.md'
@@ -47,6 +49,8 @@ nav:
       - '6.3 How-To':
           - '6.3.1 How to make release?': '06.03.01-how-to-make-release.md'
           - '6.3.2 How to deploy manually?': '06.03.02-How-to-deploy-manually.md'
+  - '7. Remote Relay Controller':
+      - '7.1 Introduction': '07.01-introduction.md'
 
 
   - '6. Project Management': '06-project-management.md'
