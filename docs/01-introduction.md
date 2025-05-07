@@ -19,6 +19,7 @@ There are two three tiers regarding monitoring mining rigs.
     - GPU miner
     - CPU miner
     - ASIC miner
+    - Remote Relay Controller (RRC)
 
 The source code is focusing on the `commander` and `sentry`.  There is one `commander` for mining farm, and many `sentry`. A sentry is installed on each `gpu miner`/ `cpu miner`. On the other hand, one sentry can monitor many `asic miner`.
 
@@ -27,7 +28,10 @@ flowchart TB
     Commander[Commander]
     Commander --> AsicSentry[ASIC Sentry]
     AsicSentry --> AM1[ASIC Miner 1]
+    AsicSentry --> RRC1[RRC 1]
     AsicSentry --> AM2[ASIC Miner 2]
+    AsicSentry --> RRC2[RRC 2]
+
 
     Commander --> CPUGPUSentry1[CPU/GPU Sentry 1]
     CPUGPUSentry1 -->|installed on| CPUMiner1[CPU Miner 1]
