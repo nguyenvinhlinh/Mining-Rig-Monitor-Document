@@ -51,9 +51,14 @@ nav:
           - '6.3.2 How to deploy manually?': '06.03.02-How-to-deploy-manually.md'
   - '7. Remote Relay Controller':
       - '7.1 Introduction': '07.01-introduction.md'
+      - '7.2 Features':
+          - '7.2.1 Turn On/Off ASIC Miner': '07.02.01-Turn-on-off-asic-miner.md'
 
 
-  - '6. Project Management': '06-project-management.md'
+  - '8. Project Management':
+      '2024-12-26 to 2025-04-12': '08.01-project-management.md'
+      '2025-05-07 to futurre': '08.02-project-management.md'
+
 
 
 plugins:
