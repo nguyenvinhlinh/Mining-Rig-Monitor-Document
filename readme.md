@@ -1,4 +1,5 @@
 # Mining Rig Monitor - Document
+Visit [http://mrm-docs.hexalink.xyz/](http://mrm-docs.hexalink.xyz/)
 ## How to setup local env?
 - Prepare `python 3.13.0`
 - Clone the source code
@@ -15,6 +16,5 @@ $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
-
 
 - Run `mkdocs serve` while activate virtual environment.
